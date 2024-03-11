@@ -19,8 +19,13 @@ const EditUser: React.FC<IUser> = ({ user, state, closeEditUser }) => {
         return null;
     }
     const handleUser = () => {
-        dispatch({ type: "EDIT_USER", payload: newUser })
-        closeEditUser()
+        if (!newUser.age && !newUser.name && !newUser.lastname) {
+            dispatch({ type: "EDIT_USER", payload: newUser })
+            closeEditUser()
+        } else {
+            alert('строка пустая')
+            return
+        }
     }
     return (
         <div onClick={closeEditUser} className='EditUser' style={{ display: state ? "flex" : "none" }}>

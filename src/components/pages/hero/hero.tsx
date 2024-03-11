@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { TypeUser } from '../../type';
-import EditUser from '../../components/modal_windows/editUser';
+import { TypeUser } from '../../../type';
+import EditUser from '../../modal_windows/editUser';
 
 interface IState {
     users: TypeUser[];
