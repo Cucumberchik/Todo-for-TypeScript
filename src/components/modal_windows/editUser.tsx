@@ -19,7 +19,7 @@ const EditUser: React.FC<IUser> = ({ user, state, closeEditUser }) => {
         return null;
     }
     const handleUser = () => {
-        if (!newUser.age && !newUser.name && !newUser.lastname) {
+        if (newUser.age && newUser.name && newUser.lastname) {
             dispatch({ type: "EDIT_USER", payload: newUser })
             closeEditUser()
         } else {
